@@ -14,7 +14,7 @@
           With LibrePass, collaboration and productivity go hand in hand. Experience the ease of secure password management and take your work to the next level.
         </h2>
 
-        <a href="/register">
+        <a href="/">
           <button class="get-started">
             Get Started
           </button>
