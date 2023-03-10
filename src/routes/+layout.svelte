@@ -15,7 +15,9 @@
 	</footer>
 </div>
 
-<style>
+<style lang="scss">
+	@import "$lib/css/variables.scss";
+
 	.app {
 		display: flex;
 		flex-direction: column;
@@ -38,7 +40,8 @@
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		padding: 12px;
+		padding: 1rem;
+		background: $bg-color-3;
 	}
 
 	footer a {

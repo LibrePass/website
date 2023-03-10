@@ -14,7 +14,7 @@
           With LibrePass, collaboration and productivity go hand in hand. Experience the ease of secure password management and take your work to the next level.
         </h2>
 
-        <a href="/">
+        <a href="/register">
           <button class="get-started">
             Get Started
           </button>
@@ -29,7 +29,7 @@
 </section>
 
 <style lang="scss">
-  @import "../../routes/variables.scss";
+  @import "$lib/css/variables.scss";
 
   section {
     display: flex;

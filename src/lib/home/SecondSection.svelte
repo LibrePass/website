@@ -28,7 +28,7 @@
 </section>
 
 <style lang="scss">
-  @import "../../routes/variables.scss";
+  @import "$lib/css/variables.scss";
 
   section {
     display: flex;

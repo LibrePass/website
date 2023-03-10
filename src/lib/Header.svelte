@@ -34,7 +34,9 @@
 <section>
   <div class="drawing-box">
     <div class="banner">
-      <img src={banner} alt="LibrePass banner" />
+      <a href="/">
+        <img src={banner} alt="LibrePass banner" />
+      </a>
 
       <div class="show-menu">
         <a href="javascript:void(0);" on:click={handleMenu}><svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 96 960 960" width="48" fill="#fff"><path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z"/></svg></a>
@@ -57,18 +59,18 @@
 
     <div class="right">
       <div>
-        <a href="/">Login</a>
+        <a href="/login">Login</a>
       </div>
 
       <div>
-        <a href="/">Register</a>
+        <a href="/register">Register</a>
       </div>
     </div>
   </div>
 </section>
 
 <style lang="scss">
-  @import "../routes/variables.scss";
+  @import "$lib/css/variables.scss";
 
   section {
     display: flex;
