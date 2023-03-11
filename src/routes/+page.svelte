@@ -5,7 +5,7 @@
 
 <svelte:head>
 	<title>LibrePass</title>
-	<meta name="description" content="Svelte demo app" />
+	<meta name="description" content="Take control of your passwords with LibrePass." />
 </svelte:head>
 
 <FirstSection />
