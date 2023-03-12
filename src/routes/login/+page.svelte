@@ -1,28 +1,23 @@
 <script>
-  function submit() {
+  import { AuthClient } from "@librepass/client";
+
+  async function submit() {
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
 
-    // TODO: Send data to server
-    alert("TODO")
+    const authClient = new AuthClient();
 
-    /*
-    fetch("/api/register", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.error) {
-          alert(data.error);
-        } else {
-          alert("Successfully registered");
-          window.location.href = "/login";
-        }
-      });*/
+    try {
+      const response = await authClient.login(email, password)
+
+      // set cookie with access and refresh token
+      document.cookie = `access_token=${response.accessToken}; path=/;`
+      document.cookie = `refresh_token=${response.refreshToken}; path=/;`
+
+      window.location.href = "/user/dashboard"
+    } catch (err) {
+      alert(err.message)
+    }
   }
 </script>
 

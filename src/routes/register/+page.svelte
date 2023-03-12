@@ -1,5 +1,7 @@
 <script>
-  function submit() {
+  import { AuthClient } from "@librepass/client";
+
+  async function submit() {
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
     const password2 = document.getElementById("password2").value;
@@ -10,26 +12,15 @@
       return;
     }
 
-    // TODO: Send data to server
-    alert("TODO")
+    const authClient = new AuthClient();
 
-    /*
-    fetch("/api/register", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.error) {
-          alert(data.error);
-        } else {
-          alert("Successfully registered");
-          window.location.href = "/login";
-        }
-      });*/
+    try {
+      await authClient.register(email, password, passwordHint)
+
+      window.location.href = "/login"
+    } catch (err) {
+      alert(err.message)
+    }
   }
 </script>
 
