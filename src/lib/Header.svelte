@@ -54,11 +54,11 @@
 
     <div class="left">
       <div>
-        <a href="/">Download</a>
+        <a href="/download">Download</a>
       </div>
 
       <div>
-        <a href="/">Help</a>
+        <a href="/help">Help</a>
       </div>
 
       <div>
