@@ -1,5 +1,5 @@
 {
-	"name": "website",
+	"name": "@librepass/website",
 	"version": "0.0.1",
 	"scripts": {
 		"dev": "vite dev",
@@ -11,7 +11,7 @@
 		"format": "prettier --plugin-search-dir . --write ."
 	},
 	"dependencies": {
-		"@librepass/client": "^0.0.5"
+		"@librepass/client": "https://github.com/LibrePass/client.js.git"
 	},
 	"devDependencies": {
 		"@fontsource/fira-mono": "^4.5.10",

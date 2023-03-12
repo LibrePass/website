@@ -34,5 +34,6 @@
     align-items: center;
     flex: 1;
     background: $bg-color-2;
+    text-align: center;
   }
 </style>
