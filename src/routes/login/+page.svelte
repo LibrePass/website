@@ -1,5 +1,13 @@
 <script>
+  import { onMount } from "svelte";
   import { AuthClient } from "@librepass/client";
+
+  import { setCookie, getCookie } from "$lib/utils/cookies.js";
+  import * as cookies from "$lib/utils/cookies.js";
+
+  onMount(() => {
+    getCookie("access_token") && (window.location.href = "/user/dashboard")
+  })
 
   async function submit() {
     const email = document.getElementById("email").value;
@@ -10,9 +18,9 @@
     try {
       const response = await authClient.login(email, password)
 
-      // set cookie with access and refresh token
-      document.cookie = `access_token=${response.accessToken}; path=/;`
-      document.cookie = `refresh_token=${response.refreshToken}; path=/;`
+      setCookie(cookies.userId, response.userId)
+      setCookie(cookies.accessToken, response.accessToken)
+      setCookie(cookies.refreshToken, response.refreshToken)
 
       window.location.href = "/user/dashboard"
     } catch (err) {

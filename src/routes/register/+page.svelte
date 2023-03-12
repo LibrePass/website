@@ -1,5 +1,12 @@
 <script>
+  import { onMount } from "svelte";
   import { AuthClient } from "@librepass/client";
+
+  import { getCookie } from "$lib/utils/cookies.js";
+
+  onMount(() => {
+    getCookie("access_token") && (window.location.href = "/user/dashboard")
+  })
 
   async function submit() {
     const email = document.getElementById("email").value;

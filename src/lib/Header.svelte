@@ -1,6 +1,9 @@
 <script>
+  import { onMount } from "svelte"
+
   import banner from './images/banner.png'
-  import { onMount } from "svelte";
+  import { getCookie } from "$lib/utils/cookies.js";
+  import * as cookies from "$lib/utils/cookies.js";
 
   function handleMenu() {
     const left = document.querySelector('.left')
@@ -15,7 +18,13 @@
     }
   }
 
+  let mounted = false;
+  let userId;
+
   onMount(() => {
+    mounted = true;
+    userId = getCookie(cookies.userId);
+
     // window.addEventListener('resize', handleResize)
     window.onresize = handleResize
   })
@@ -58,13 +67,21 @@
     </div>
 
     <div class="right">
-      <div>
-        <a href="/login">Login</a>
-      </div>
+      {#if mounted}
+        {#if userId}
+          <div>
+            <a href="/user/dashboard">Dashboard</a>
+          </div>
+        {:else}
+          <div>
+            <a href="/login">Login</a>
+          </div>
 
-      <div>
-        <a href="/register">Register</a>
-      </div>
+          <div>
+            <a href="/register">Register</a>
+          </div>
+        {/if}
+      {/if}
     </div>
   </div>
 </section>
