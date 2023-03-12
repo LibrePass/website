@@ -62,7 +62,7 @@
       </div>
 
       <div>
-        <a href="/">Contact</a>
+        <a href="/contact">Contact</a>
       </div>
     </div>
 

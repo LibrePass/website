@@ -11,7 +11,8 @@
 		"format": "prettier --plugin-search-dir . --write ."
 	},
 	"dependencies": {
-		"@librepass/client": "https://github.com/LibrePass/client.js.git"
+		"@librepass/client": "https://github.com/LibrePass/client.js.git",
+		"svelte-material-icons": "^3.0.4"
 	},
 	"devDependencies": {
 		"@fontsource/fira-mono": "^4.5.10",
